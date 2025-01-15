@@ -164,7 +164,7 @@ main h2 {
 /* Üldised p stiilid */
 /* Põhistiilid */
 main p {
-    text-align: justify; /* Joonda tekst õigesti */
+    text-align: left; /* Joonda tekst õigesti */
     font-size: 20px; /* Mugav teksti suurus */
     line-height: 1.6; /* Mugav reavahe */
     margin-bottom: 20px; /* Lisaruumi lõikude vahel */
