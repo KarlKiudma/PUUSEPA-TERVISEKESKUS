@@ -104,6 +104,7 @@ nav ul li:hover {
     background-repeat: no-repeat;
     position: relative; /* Tagab õige paigutuse */
     z-index: 1;
+    flex-wrap: wrap;
 }
 
 
@@ -160,14 +161,29 @@ main h2 {
     margin: 50px 0;
 }
 
+/* Üldised p stiilid */
+/* Põhistiilid */
 main p {
-    text-align: justify;
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    text-align: justify; /* Joonda tekst õigesti */
+    font-size: 20px; /* Mugav teksti suurus */
+    line-height: 1.6; /* Mugav reavahe */
+    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
+    font-family: monospace;
+    word-wrap: break-word; /* Väldib teksti väljajooksmist */
+    overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
+}
+section {
+    display: block; /* Võimaldab loomuliku teksti voolu */
+    max-width: 100%; /* Väldi kitsendusi */
 }
 
-/* Lingid */
+@media (max-width: 768px) {
+    main p {
+        font-size: 16px; /* Väiksem teksti suurus */
+        line-height: 1.4; /* Kitsam reavahe */
+    }
+}
+
 a {
     color: #233142;
     text-decoration: none;
