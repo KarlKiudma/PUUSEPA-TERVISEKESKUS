@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Läbipaistev must taust */
+    background-color: rgba(0, 0, 0, 0.2); /* Läbipaistev must taust */
     padding: 20px 30px;
     z-index: 10; /* Toob nav-i esiplaanile */
     box-sizing: border-box;
@@ -52,6 +52,7 @@ nav ul li {
     padding: 10px 0;
     font-size: 18px;
     font-family: monospace;
+    border: 2px solid #fff;
 }
 
 nav ul li:hover {
@@ -71,8 +72,10 @@ nav ul li:hover {
     nav ul {
         display: none; /* Algseis väike ekraan */
         flex-direction: column; /* Vertikaalne paigutus */
-        background-color: rgba(0, 0, 0, 0.9); /* Tume taust */
-        position: absolute;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.2); /* Tume taust */
+        position: fixed;
         top: 100%; /* Paigutage nav-i alla */
         left: 0;
         width: 100%;
@@ -87,6 +90,10 @@ nav ul li:hover {
     nav ul li {
         text-align: center; /* Joondage keskele */
         padding: 15px 0;
+    }
+    nav ul li:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
     }
 
     .menu-icon {
