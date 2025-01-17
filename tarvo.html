@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puusepa Tervisekeskus - Dr. Tarvo Kiudma</title>
+    <link rel="stylesheet" href="tarvo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Dr. Tarvo Kiudma</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul class="menu-list">
+                <li><a href="index.html">ESILEHT</a></li>
+                <li><a href="vastuvõtud.html">VASTUVÕTUD</a></li>
+                <li><a href="teenused.html">TEENUSED</a></li>
+                <li><a href="kasulikudviited.html">KASULIKUD VIITED</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="taustapilt"></section>
+        <div class="content-container">
+            <aside class="sidebar">
+                <h3><a href="vastuvõtud.html">Vastuvõtud</a></h3>
+                <ul>
+                    <li><a href="tarvo.html" class="highlight">Dr. Tarvo Kiudma</a></li>
+                    <li><a href="aet.html">Dr. Aet Valgepea</a></li>
+                    <li><a href="anu.html">Dr. Anu Vasar</a></li>
+                </ul>
+            </aside>
+            <section class="valge-taust">
+                <!-- Esimene profiil -->
+                <div class="profile">
+                    <img src="http://media.voog.com/0000/0039/0731/photos/Tarvo-Kiudma1.png" alt="Dr. Tarvo Kiudma">
+                    <div class="profile-text">
+                        <p><span style="color: #f95959; font-weight: bold;">Perearst</span></p>
+                        <p><span style="color: #233142; font-weight: bold;">Tarvo Kiudma</span></p>
+                        <p>E-mail: <a href="mailto:perearst.kiudma@gmail.com">perearst.kiudma@gmail.com</a></p>
+                        <p>Esmaspäev 08.00 - 13.00</p>
+                        <p>Teisipäev 14.00 - 18.00</p>
+                        <p>Kolmapäev 09.00 - 13.00</p>
+                        <p>Neljapäev 12.00 - 16.00</p>
+                        <p>Reede 09.00 - 13.00</p>
+                    </div>
+                </div>
+
+                <!-- Ruumi lisamine -->
+                <div style="height: 40px;"></div>
+
+                <!-- Teine profiil -->
+                <div class="profile">
+                    <img src="http://media.voog.com/0000/0039/0731/photos/Reet-Rüütli.png" alt="Reet Rüütli">
+                    <div class="profile-text">
+                        <p><span style="color: #f95959; font-weight: bold;">Pereõde</span></p>
+                        <p><span style="color: #233142; font-weight: bold;">Reet Rüütli</span></p>
+                        <p>Esmaspäev 12.00 - 16.00</p>
+                        <p>Teisipäev 10.00 - 18.00</p>
+                        <p>Kolmapäev 12.00 - 16.00</p>
+                        <p>Reede 08.00 - 12.00</p>
+                    </div>
+                </div>
+
+                <!-- Kastid informatsiooniga -->
+                
+                <div class="profile">
+                    <img src="http://media.voog.com/0000/0039/0731/photos/Katrin-Pauska.png" alt="Katrin Pauska">
+                    <div class="profile-text">
+                        <p><span style="color: #f95959; font-weight: bold;">Pereõde</span></p>
+                        <p><span style="color: #233142; font-weight: bold;">Katrin Pauska</span></p>
+                        <p>Esmaspäev 08.00 - 12.00</p>
+                        <p>Kolmapäev 08.00 - 12.00</p>
+                        <p>Neljapäev 08.00 - 16.00</p>
+                        <p>Reede 12.00 - 16.00</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h2>Registreerimine vastuvõtule</h2>
+                    <div style="height: 40px;"></div>
+                    <p><b>Telefon:</b> 766 8616</p>
+                    <p><b>E-mail:</b> <a href="mailto:perearst.kiudma@gmail.com">perearst.kiudma@gmail.com</a></p>
+                </div>
+            
+                <div class="info-box">
+                    <h2>Praksis avatud</h2>
+                    <div style="height: 40px;"></div>
+                    <p><b>Esmaspäev:</b> 08.00 - 16.00</p>
+                    <p><b>Teisipäev:</b> 10.00 - 18.00</p>
+                    <p><b>Kolmapäev:</b> 08.00 - 16.00</p>
+                    <p><b>Neljapäev:</b> 08.00 - 16.00</p>
+                    <p><b>Reede:</b> 08.00 - 16.00</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div style="height: 40px;"></div>
+    <section class="taust-pildiga">
+        <div class="tekst-pildi-peal">
+            <h2><a href="kontakt.html">KONTAKT</a></h2>
+        </div>
+        <div class="tekst-pildi-peal">
+            <p>Puusepa Tervisekeskus</p>
+            <p>Ludvig Puusepa 3, 50406 Tartu</p>
+        </div>
+    </section>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-list');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

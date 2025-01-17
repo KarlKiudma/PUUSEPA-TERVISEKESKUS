@@ -1,4 +1,3 @@
-/* Põhistiilid */
 body, html {
     margin: 0;
     padding: 0;
@@ -54,6 +53,7 @@ nav ul li a{
     padding: 15px 0;
     font-size: 18px;
     font-family: monospace;
+    text-decoration: none;
 
 
 }
@@ -72,6 +72,40 @@ nav ul li a:hover {
 }
 
 /* Meediapäring väiksematele ekraanidele */
+@media (max-width: 1070px) {
+    nav ul {
+        display: none; /* Algseis väike ekraan */
+        flex-direction: column; /* Vertikaalne paigutus */
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3); /* Tume taust */
+        position: fixed;
+        top: 100%; /* Paigutage nav-i alla */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 10; /* Esiplaanile */
+    }
+
+    nav ul.active {
+        display: flex; /* Kuvatakse aktiivsena */
+    }
+
+    nav ul li {
+        text-align: center; /* Joondage keskele */
+        padding: 42.5px 0;
+        text-decoration: none;
+    }
+    nav ul li:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
+        text-decoration: none;
+    }
+
+    .menu-icon {
+        display: block; /* Kuvatakse väiksematel ekraanidel */
+    }
+}
 @media (max-width: 1070px) {
     nav ul {
         display: none; /* Algseis väike ekraan */
@@ -158,25 +192,13 @@ nav ul li a:hover {
     }
 }
 
-
-
-
-
 /* Taustapilt */
 .taustapilt {
-    height: 60vh; /* Täidab 60% akna kõrgusest */
-    width: 100%; /* Täidab kogu laiuse */
-    background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
+    height: 60vh;
+    background-image: url('https://jl.ee/images/illustrations/maja2.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    position: relative; /* Tagab õige paigutuse */
-    z-index: 1;
-    flex-wrap: wrap;
 }
-
-
-/* Meediapäring väiksematele ekraanidele */
 @media (max-width: 1070px) {
     nav ul {
         display: none; /* Peidetud algselt */
@@ -198,212 +220,86 @@ nav ul li a:hover {
     }
 }
 
+/* Sisu konteiner */
+.content-container {
+    display: flex;
+    margin: 20px;
+    align-items: flex-start;
+    max-width: 1070px;
+}
 
 /* Valge taust */
 .valge-taust {
-    background-color: white;
-    color: #455d7a;
+    flex: 3;
+    background: white;
     padding: 20px;
-    text-align: center;
-    font-family: monospace;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 50px auto;
-    box-sizing: border-box;
-    max-width: 1070px;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Main elemendid */
-main {
-    font-size: larger;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
     margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-
-main h2 {
-    color: #233142;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin: 50px 0;
-}
-
-/* Üldised p stiilid */
-/* Põhistiilid */
 main p {
     text-align: left; /* Joonda tekst õigesti */
+    color: #455d7a;
     font-size: 20px; /* Mugav teksti suurus */
-    line-height: 1.6; /* Mugav reavahe */
+    line-height: 1.8; /* Mugav reavahe */
     margin-bottom: 20px; /* Lisaruumi lõikude vahel */
     font-family: monospace;
     margin: 0 30px;
     word-wrap: break-word; /* Väldib teksti väljajooksmist */
     overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
 }
-section {
-    display: block; /* Võimaldab loomuliku teksti voolu */
-    max-width: 100%; /* Väldi kitsendusi */
-}
-
-@media (max-width: 768px) {
-    main p {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
-    }
-}
-
-a {
+main h2 {
     color: #233142;
-    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+    font-family: monospace;
 }
 
-a:hover {
-    color: #233142;
-    text-decoration: underline;
+/* Sidebar */
+.sidebar {
+    margin-top: 100px;
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
 }
 
-/* Loendid */
-ul {
-    margin: 0 30px;
-    text-align: left;
-    padding: 10px;
-    line-height: 30px;
+.sidebar h3 {
+    margin-bottom: 10px;
+    font-family: monospace;
     font-size: 20px;
-}
-@media (max-width: 768px) {
-    ul {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
-    }
-}
-.highlight {
-    color: #f95959;
-    font-weight: bold;
-
-}
-
-/* Pildid */
-.pildid {
-    display: flex;
-    flex-wrap: nowrap; /* Pildid ei murdu uude ritta */
-    justify-content: space-between; /* Ühtlane vahe piltide vahel */
-    overflow-x: auto; /* Lisab horisontaalse kerimise, kui vajalik */
-}
-.pildid figure {
-    flex: 1 1 calc(33.33% - 15px); /* Iga kast võtab kolmandiku rea laiust */
-    max-width: calc(33.33% - 15px); /* Sama mis ülal */
-    box-sizing: border-box; /* Arvesta polsterdamist ja piiri */
-    background-color: #f9f9f9; /* Taustavärv */
-    text-align: center;
-    border-radius: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari */
-    overflow: hidden;
-    padding: 10px;
-}
-.pildid img {
-    width: 100%; /* Pilt täidab kogu kasti laiuse */
-    height: auto; /* Säilitab piltide proportsioonid */
-    border-radius: 5px; /* Ümarad nurgad */
-}
-.pildid figcaption h3{
-    font-size: 18px;
-    margin: 0 30px;
-    margin-bottom: 20px;
-}
-.pildid figcaption p {
-    font-size: 16px;
-    text-align: left;
-    white-space: normal; /* Laseb tekstil murduda */
-    hyphens: none; /* Väldib sõnade poolitamist */
-    word-break: break-word; /* Murrab sõnu ainult vajadusel */
-}
-
-.pildid figcaption {
-    margin-top: 10px;
-    text-align: left;
-    color: #455d7a;
-    max-width: 100%;
-}
-@media (max-width: 768px) {
-    .pildid figcaption p {
-        font-size: 12px;
-        text-align: left;
-        white-space: normal; /* Laseb tekstil murduda */
-        hyphens: none; /* Väldib sõnade poolitamist */
-        word-break: break-word; /* Murrab sõnu ainult vajadusel */
-    }
-    .pildid figcaption h3 {
-        font-size: 14px;
-    }
-}
-
-/* Meediapäring väiksemate ekraanide jaoks */
-@media (max-width: 480px) {
-    .pildid figcaption p {
-        font-size: 12px;
-        text-align: left;
-        white-space: normal; /* Laseb tekstil murduda */
-        hyphens: none; /* Väldib sõnade poolitamist */
-        word-break: break-word; /* Murrab sõnu ainult vajadusel */
-    }
-    .pildid figcaption h3{
-        font-size: 14px;
-    }
-}
-
-/* Kastid */
-.kastid {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: white;
-    padding: 10px;
-}
-
-.kast {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
-    box-sizing: border-box;
-    background-color: white;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari kastidele */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari kastidele */
-    border-radius: 5px;
-}
-
-.kast p {
-    font-size: 16px;
-    color: #455d7a;
-    font-weight: bold;
     
 }
-@media (max-width: 768px) {
-    .kast p {
-        font-size: 12px; /* Väiksem font keskmistel ekraanidel */
-        line-height: 1.5; /* Sama ridade vahe */
-    }
+.sidebar h3 a {
+    color: #233142;
+    text-decoration: none;
+    
 }
 
-/* Meediapäring väiksemate ekraanide jaoks */
-@media (max-width: 480px) {
-    .kast p {
-        font-size: 8px; /* Veel väiksem font väikestel ekraanidel */
-        line-height: 1.5; /* Sama ridade vahe */
-    }
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #233142;
+    font-family: monospace;
+    color: #455d7a;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Tekst pildi peal */
@@ -457,12 +353,11 @@ ul {
     margin: 0;
     font-size: 20px;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
+    text-decoration: none;
 }
 
 .tekst-pildi-peal h2 a:hover {
-    font-weight: normal;
-    text-decoration: none;
     text-shadow: 0 0 10px white;
 }
 
@@ -496,83 +391,4 @@ ul {
         font-size: 25px;
         
     }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.info-kast {
-    background-color: #f9f9f9; /* Hele taust */
-    border: 1px solid #ddd; /* Pehme ääris */
-    border-radius: 10px; /* Ümarad nurgad */
-    padding: 20px;
-    margin: 20px;
-    max-width: 800px; /* Maksimaalne laius */
-    margin: 20px auto; /* Keskendab kasti lehel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Pehme vari */
-}
-
-.info-kast h1 {
-    font-size: 24px;
-    color: #233142;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.info-kast p {
-    font-size: 18px;
-    color: #455d7a;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.info-kast table {
-    width: 100%; /* Tabel täidab kogu kasti laiuse */
-    border-collapse: collapse; /* Ääriste ühendamine */
-    margin-top: 20px;
-}
-
-.info-kast th,
-.info-kast td {
-    border: 1px solid #ddd; /* Tabeli lahtrite ääris */
-    padding: 10px; /* Polsterdamine */
-    text-align: center; /* Teksti joondamine keskele */
-    font-size: 16px;
-    color: #455d7a;;
-}
-
-.info-kast th {
-    background-color: white; /* Tume taust päisele */
-    color: #455d7a;; /* Valge tekst päises */
-    font-weight: bold;
-}
-
-.info-kast td {
-    background-color: #fff; /* Valge taust lahtritel */
-}
-
-.info-kast tr:nth-child(even) td {
-    background-color: #f2f2f2; /* Helehall triip vahelduvatele ridadele */
-}
-
-.maps-container {
-    margin-top: 20px; /* Vahe kaardi ja muu sisu vahel */
-    border: 1px solid #ddd; /* Kaardi ümber pehme ääris */
-    border-radius: 10px; /* Ümarad nurgad */
-    overflow: hidden; /* Väldi üleulatuvat sisu */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Pehme vari */
-    max-width: 100%; /* Kaart ei ületa ekraani laiust */
-}
-
-iframe {
-    display: block; /* Eemaldab vaikimisi vahed */
-    width: 100%; /* Kohandub konteineri laiusega */
-    height: 450px; /* Kaardi kõrgus */
-}
-.valge-taust p.center {
-    text-align: center;
 }

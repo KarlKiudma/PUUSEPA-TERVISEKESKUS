@@ -1,0 +1,169 @@
+/* Põhistiilid */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Header ja nav */
+header {
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 40px;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+nav h1 {
+    font-family: monospace;
+    color: #e3e3e3;
+    font-size: 24px;
+    margin: 5px;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+    font-weight: normal;
+}
+
+nav ul li a {
+    color: #e3e3e3;
+    cursor: pointer;
+    padding: 15px 0;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+nav ul li a:hover {
+    color: #e3e3e3;
+    text-shadow: 0 0 10px #e3e3e3;
+    text-decoration: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #e3e3e3;
+    cursor: pointer;
+    z-index: 15;
+}
+
+@media (max-width: 1070px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 10;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 42.5px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Konteiner: Sidebar ja peamine sisu */
+.content-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* Joondab elemendid algusest */
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Sidebar vasakul */
+.sidebar {
+    order: -1; /* Paigutab sidebar-i vasakule */
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #233142;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #455d7a;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #233142;
+    text-decoration: underline;
+}
+
+/* Valge taust: Peamine sisu */
+.valge-taust {
+    flex: 3; /* Võtab suurema osa ruumist */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiivsus */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Muudab paigutuse vertikaalseks */
+        gap: 20px;
+    }
+
+    .valge-taust, .sidebar {
+        flex: none;
+        width: 100%; /* Täidab kogu laiuse */
+    }
+}

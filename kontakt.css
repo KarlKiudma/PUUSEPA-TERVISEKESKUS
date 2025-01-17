@@ -94,12 +94,10 @@ nav ul li a:hover {
     nav ul li {
         text-align: center; /* Joondage keskele */
         padding: 42.5px 0;
-        text-decoration: none;
     }
     nav ul li:hover {
         color: #fff;
         text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
-        text-decoration: none;
     }
 
     .menu-icon {
@@ -148,7 +146,6 @@ nav ul li a:hover {
     nav ul li a:hover {
         background-color: transparent; /* Eemaldab hover-tausta */
         color: #fff; /* Muudab ainult teksti värvi */
-        text-decoration: none;
     }
 
     .menu-icon {
@@ -243,7 +240,7 @@ main h2 {
 /* Üldised p stiilid */
 /* Põhistiilid */
 main p {
-    text-align: left; /* Joonda tekst õigesti */
+    text-align: justify; /* Joonda tekst õigesti */
     font-size: 20px; /* Mugav teksti suurus */
     line-height: 1.6; /* Mugav reavahe */
     margin-bottom: 20px; /* Lisaruumi lõikude vahel */
@@ -457,11 +454,10 @@ ul {
     margin: 0;
     font-size: 20px;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .tekst-pildi-peal h2 a:hover {
-    font-weight: normal;
     text-decoration: none;
     text-shadow: 0 0 10px white;
 }
