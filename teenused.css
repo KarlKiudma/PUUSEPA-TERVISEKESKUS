@@ -282,11 +282,6 @@ section {
         font-size: 16px; /* Väiksem teksti suurus */
         line-height: 1.4; /* Kitsam reavahe */
     }
-    main ul li {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
-
-    }
 }
 
 p a {
@@ -347,7 +342,7 @@ ul {
     margin-bottom: 20px;
 }
 .pildid figcaption p {
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     white-space: normal; /* Laseb tekstil murduda */
     hyphens: none; /* Väldib sõnade poolitamist */

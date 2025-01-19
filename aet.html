@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <h1>Dr. Tarvo Kiudma</h1>
+            <h1>Dr. Aet Valgepea</h1>
             <div class="menu-icon" onclick="toggleMenu()">
                 &#9776;
             </div>
@@ -28,23 +28,23 @@
             <aside class="sidebar">
                 <h3><a href="vastuvõtud.html">Vastuvõtud</a></h3>
                 <ul>
-                    <li><a href="tarvo.html" class="highlight">Dr. Tarvo Kiudma</a></li>
-                    <li><a href="aet.html">Dr. Aet Valgepea</a></li>
+                    <li><a href="tarvo.html">Dr. Tarvo Kiudma</a></li>
+                    <li><a href="aet.html" class="highlight">Dr. Aet Valgepea</a></li>
                     <li><a href="anu.html">Dr. Anu Vasar</a></li>
                 </ul>
             </aside>
             <section class="valge-taust">
                 <!-- Esimene profiil -->
                 <div class="profile">
-                    <img src="http://media.voog.com/0000/0039/0731/photos/Tarvo-Kiudma1.png" alt="Dr. Tarvo Kiudma">
+                    <img src="http://media.voog.com/0000/0039/0731/photos/Aet-Valgepea1.png" alt="Aet Valgepea">
                     <div class="profile-text">
                         <p><span style="color: #f95959; font-weight: bold;">Perearst</span></p>
-                        <p><span style="color: #233142; font-weight: bold;">Tarvo Kiudma</span></p>
-                        <p>E-mail: <a href="mailto:perearst.kiudma@gmail.com">perearst.kiudma@gmail.com</a></p>
-                        <p>Esmaspäev 08.00 - 13.00</p>
+                        <p><span style="color: #233142; font-weight: bold;">Aet Valgepea</span></p>
+                        <p>E-mail: <a href="mailto:perearst.valgepea@gmail.com">perearst.valgepea@gmail.com</a></p>
+                        <p>Esmaspäev 09.00 - 13.00</p>
                         <p>Teisipäev 14.00 - 18.00</p>
-                        <p>Kolmapäev 09.00 - 13.00</p>
-                        <p>Neljapäev 12.00 - 16.00</p>
+                        <p>Kolmapäev 08.00 - 12.00</p>
+                        <p>Neljapäev 09.00 - 13.00</p>
                         <p>Reede 09.00 - 13.00</p>
                     </div>
                 </div>
@@ -54,36 +54,35 @@
 
                 <!-- Teine profiil -->
                 <div class="profile">
-                    <img src="http://media.voog.com/0000/0039/0731/photos/Reet-Rüütli.png" alt="Reet Rüütli">
+                    <img src="http://media.voog.com/0000/0039/0731/photos/Maie-Kiilu.png" alt="Tiina Paabut">
                     <div class="profile-text">
                         <p><span style="color: #f95959; font-weight: bold;">Pereõde</span></p>
-                        <p><span style="color: #233142; font-weight: bold;">Reet Rüütli</span></p>
-                        <p>Esmaspäev 12.00 - 16.00</p>
-                        <p>Teisipäev 10.00 - 18.00</p>
-                        <p>Kolmapäev 12.00 - 16.00</p>
-                        <p>Reede 08.00 - 12.00</p>
+                        <p><span style="color: #233142; font-weight: bold;">Tiina Paabut</span></p>
+                        <p>Esmaspäev 08.00-16.00</p>
+                        <p>Teisipäev 08.00-16.00</p>
+                        <p>Kolmapäev 08.00-16.00 </p>
+                        <p>Neljapäev 08.00 - 16.00</p>
+                        <p>Reede 08.00 - 16.00</p>
                     </div>
                 </div>
 
                 <!-- Kastid informatsiooniga -->
                 
                 <div class="profile">
-                    <img src="http://media.voog.com/0000/0039/0731/photos/Katrin-Pauska.png" alt="Katrin Pauska">
+                    <img src="blank_image.png" alt="Tühi pilt" />
                     <div class="profile-text">
+                        
                         <p><span style="color: #f95959; font-weight: bold;">Pereõde</span></p>
-                        <p><span style="color: #233142; font-weight: bold;">Katrin Pauska</span></p>
-                        <p>Esmaspäev 08.00 - 12.00</p>
-                        <p>Kolmapäev 08.00 - 12.00</p>
-                        <p>Neljapäev 08.00 - 16.00</p>
-                        <p>Reede 12.00 - 16.00</p>
+                        <p><span style="color: #233142; font-weight: bold;">Maie Kiilu</span></p>
+                        <p>Vastavalt graafikule</p>
                     </div>
                 </div>
                 <div class="info-box">
                     <h2>Registreerimine vastuvõtule</h2>
                     <div style="height: 40px;"></div>
                     <div style="height: 40px;"></div>
-                    <p><b>Telefon:</b> 766 8616</p>
-                    <p><b>E-mail:</b> <a href="mailto:perearst.kiudma@gmail.com">perearst.kiudma@gmail.com</a></p>
+                    <p><b>Telefon:</b> 733 0300 / 5656 9618</p>
+                    <p><b>E-mail:</b> <a href="mailto:perearst.valgepea@gmail.com">perearst.valgepea@gmail.com</a></p>
                 </div>
             
                 <div class="info-box">
@@ -111,6 +110,11 @@
             <p>Ludvig Puusepa 3, 50406 Tartu</p>
         </div>
     </section>
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-list');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

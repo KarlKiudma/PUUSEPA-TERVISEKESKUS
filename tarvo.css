@@ -1,9 +1,11 @@
+/* Põhistiilid */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box; /* Õige paddingu ja marginaali arvestus */
+    font-family: monospace;
 }
 
 /* Header ja nav */
@@ -27,7 +29,6 @@ nav {
 }
 
 nav h1 {
-    font-family: monospace;
     color: #e3e3e3;
     font-size: 24px;
     margin: 5px;
@@ -52,7 +53,6 @@ nav ul li a{
     cursor: pointer;
     padding: 15px 0;
     font-size: 18px;
-    font-family: monospace;
     text-decoration: none;
 
 
@@ -70,164 +70,171 @@ nav ul li a:hover {
     cursor: pointer;
     z-index: 15; /* Tõstke esile nav-i kohal */
 }
+.taustapilt {
+    height: 60vh; /* Täidab 60% akna kõrgusest */
+    width: 100%; /* Täidab kogu laiuse */
+    background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Tagab õige paigutuse */
+    z-index: 1;
+    flex-wrap: wrap;
+}
 
-/* Meediapäring väiksematele ekraanidele */
 @media (max-width: 1070px) {
     nav ul {
-        display: none; /* Algseis väike ekraan */
-        flex-direction: column; /* Vertikaalne paigutus */
+        display: none;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.3); /* Tume taust */
-        position: fixed;
-        top: 100%; /* Paigutage nav-i alla */
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 100%;
         left: 0;
         width: 100%;
         padding: 20px 0;
-        z-index: 10; /* Esiplaanile */
+        z-index: 10;
     }
 
     nav ul.active {
-        display: flex; /* Kuvatakse aktiivsena */
+        display: flex;
     }
 
     nav ul li {
-        text-align: center; /* Joondage keskele */
-        padding: 42.5px 0;
+        text-align: center;
+        padding: 24px 0;
         text-decoration: none;
     }
     nav ul li:hover {
         color: #fff;
-        text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
+        text-shadow: 0 0 10px #fff;
         text-decoration: none;
     }
+    .taustapilt {
+        height: 40vh;
+    }
+
+    .tekst-pildi-peal {
+        width: 30%;
+        padding: 10px 15px;
+    }
+
+    .tekst-pildi-peal p {
+        font-size: 12px;
+    }
+
+    .tekst-pildi-peal h2 a {
+        font-size: 25px;
+    }
+
 
     .menu-icon {
-        display: block; /* Kuvatakse väiksematel ekraanidel */
+        display: block;
     }
 }
-@media (max-width: 1070px) {
-    nav ul {
-        display: none; /* Algseis väike ekraan */
-        flex-direction: column; /* Vertikaalne paigutus */
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.3); /* Tume taust */
-        position: fixed;
-        top: 100%; /* Paigutage nav-i alla */
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        z-index: 10; /* Esiplaanile */
-    }
 
-    nav ul.active {
-        display: flex; /* Kuvatakse aktiivsena */
-    }
-
-    nav ul li {
-        text-align: center; /* Joondage keskele */
-        padding: 42.5px 0;
-        text-decoration: none;
-    }
-    nav ul li:hover {
-        color: #fff;
-        text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
-        text-decoration: none;
-    }
-
-    .menu-icon {
-        display: block; /* Kuvatakse väiksematel ekraanidel */
-    }
-}
-/* Meediapäring väiksematele ekraanidele */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Algseis */
-        flex-direction: column; /* Vertikaalne paigutus */
-        justify-content: center; /* Joondab elemendid alguses */
-        align-items: center; /* Joondab elemendid paremale */
-        background-color: rgba(0, 0, 0, 0.8); /* Tume taust */
-        position: fixed; /* Kindel paigutus ekraanil */
-        top: 60px; /* Päisest allpool */
-        right: 0; /* Joondab menüü paremale */
-        transform: translateX(0); /* Pole vaja keskele viimist */
-        width: 70%; /* Menüü laius (kohanda vajadusel) */
-        padding: 20px;
-        border-radius: 8px 0 0 8px; /* Ümarad nurgad vasakule */
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 70%;
+        padding: 40px;
+        border-radius: 8px 0 0 8px;
         z-index: 10;
-        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3); /* Esteetiline vari */
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3);
     }
 
     nav ul.active {
-        display: flex; /* Kuvatakse aktiivsena */
+        display: flex;
     }
 
     nav ul li {
-        text-align: center; /* Tekst joondatakse paremale */
-        width: 100%; /* Laiendab menüüpunkte */
-        padding: 19.5px 0;
+        text-align: center;
+        width: 100%;
+        padding: 24px 0;
     }
 
     nav ul li a {
-        display: inline; /* Muudab lingid inline-elementideks */
-        text-align: center; /* Tekst joondub keskele */
+        display: inline;
+        text-align: center;
         color: #e3e3e3;
         text-decoration: none;
         font-size: 18px;
-        padding: 0; /* Eemaldab paddingu, mis laiendas linki */
-        border-radius: 0; /* Eemaldab lisapiirjooned */
+        padding: 0;
+        border-radius: 0;
+    }
+    .taustapilt {
+        height: 40vh;
+    }
+
+    .tekst-pildi-peal {
+        width: 30%;
+        padding: 10px 15px;
+    }
+
+    .tekst-pildi-peal p {
+        font-size: 12px;
+    }
+
+    .tekst-pildi-peal h2 a {
+        font-size: 25px;
     }
 
     nav ul li a:hover {
-        background-color: transparent; /* Eemaldab hover-tausta */
-        color: #fff; /* Muudab ainult teksti värvi */
+        background-color: transparent;
+        color: #fff;
         text-decoration: none;
     }
 
     .menu-icon {
-        display: block; /* Menüükiko kuvamine väiksematel ekraanidel */
+        display: block;
         font-size: 28px;
         color: #fff;
     }
 }
 
-/* Taustapilt */
-.taustapilt {
-    height: 60vh;
-    background-image: url('https://jl.ee/images/illustrations/maja2.jpeg');
-    background-size: cover;
-    background-position: center;
-}
 @media (max-width: 1070px) {
     nav ul {
-        display: none; /* Peidetud algselt */
-        flex-direction: column; /* Vertikaalne paigutus */
-        background-color: rgba(0, 0, 0, 0.3); /* Tume taust menüü avamisel */
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.3);
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%; /* Täidab kogu laiuse */
+        width: 100%;
         padding: 20px 0;
     }
 
     nav ul.active {
-        display: flex; /* Muudab nähtavaks, kui klass 'active' on lisatud */
+        display: flex;
     }
 
     .menu-icon {
-        display: block; /* Kuvatakse väiksematel ekraanidel */
+        display: block;
     }
 }
 
-/* Sisu konteiner */
+
+
+
+
 .content-container {
     display: flex;
     align-items: flex-start;
-    max-width: 1070px;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Valge taust */
 .valge-taust {
     flex: 3;
     background: white;
@@ -235,48 +242,36 @@ nav ul li a:hover {
     margin-left: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    max-width: 90%;
 }
+
 main p {
-    text-align: left; /* Joonda tekst õigesti */
+    text-align: left;
     color: #455d7a;
-    font-size: 20px; /* Mugav teksti suurus */
-    line-height: 1.6; /* Mugav reavahe */
-    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
-    font-family: monospace;
-    margin: 0 30px;
-    word-wrap: break-word; /* Väldib teksti väljajooksmist */
-    overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 30px 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+
 main h2 {
     color: #233142;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     margin: 50px 0;
-    font-family: monospace;
 }
 
-/* Sidebar */
 .sidebar {
+    margin-left: 100px;
     margin-top: 100px;
     flex: 1;
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: fit-content;
 }
-/* Highlight class for specific item */
-.sidebar ul li a.highlight {
-    color: #233142;; /* Muuda see soovitud värviks */
-    font-weight: bold; /* Vajadusel tee tekst paksuks */
-}
-
-.sidebar ul li a.highlight:hover {
-    color: #233142;; /* Hover-efekti värv */
-    text-decoration: none;
-}
-
 
 .sidebar h3 {
     margin-bottom: 10px;
@@ -297,34 +292,36 @@ main h2 {
 
 .sidebar ul li {
     margin-bottom: 10px;
-    font-family: monospace;
     font-size: 18px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #233142;
-    font-family: monospace;
     color: #455d7a;
 }
 
 .sidebar ul li a:hover {
     color: #233142;
-    text-decoration: none; /* Eemalda allajoonimine */
+}
+.sidebar ul li a.highlight {
+    color: #233142;; /* Muuda see soovitud värviks */
+    font-weight: bold; 
+}
+.sidebar ul li a.highlight:hover {
+    color: #233142;; 
+    text-decoration: none;
 }
 
-/* Tekst pildi peal */
 .taust-pildiga {
-    position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
-    width: 100vw; /* Täidab kogu akna laiuse */
-    height: 30vh; /* Võid kohandada vastavalt vajadusele */
+    position: relative;
+    width: 100vw;
+    height: 30vh;
     background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
-    background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
-    background-position: center; /* Keskenda pilt */
-    background-repeat: no-repeat; /* Väldi pildi kordumist */
-    z-index: 1; /* Kui vaja kihte hallata */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
-
 
 .tekst-pildi-peal {
     position: absolute;
@@ -333,9 +330,10 @@ main h2 {
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #fff;
     padding: 15px 25px;
-    text-align: center;
+    text-align: left;
     width: auto;
     max-width: 90%; /* Piirab kastide laiuse */
+    transition: all 0.3s ease;
 }
 .taust-pildiga, main {
     width: 100%; /* Eemalda laiuse piirang */
@@ -361,48 +359,30 @@ main h2 {
 
 
 .tekst-pildi-peal h2 a {
+    color: white;
+    font-family: var(--button-font-style);
     margin: 0;
     font-size: 20px;
-    color: white;
     font-weight: normal;
     text-decoration: none;
-}
+  }
 
-.tekst-pildi-peal h2 a:hover {
-    text-shadow: 0 0 10px white;
-}
+  .tekst-pildi-peal:hover {
+    background-color: white;
+    color: black;
+  }
+  .tekst-pildi-peal:hover h2 a {
+    color: black; 
+  }
 
 .tekst-pildi-peal p {
     margin: 5px 0;
     font-size: 18px;
     color: white;
 }
-
-/* Responsiivsus */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
-    .taustapilt {
-        height: 40vh;
-    }
-
-    .tekst-pildi-peal {
-        width: 30%;
-        padding: 10px 15px;
-    }
-
-    .tekst-pildi-peal p {
-        font-size: 12px;
-    }
-    .tekst-pildi-peal h2 a {
-        font-size: 25px;
-        
-    }
-}
+.tekst-pildi-peal:hover p {
+    color: black; 
+  }
 
 .profile {
     display: flex;

@@ -1,34 +1,31 @@
-/* Põhistiilid */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    box-sizing: border-box; /* Õige paddingu ja marginaali arvestus */
+    box-sizing: border-box; 
+    font-family: monospace;
 }
 
-/* Header ja nav */
 header {
     position: relative;
     z-index: 10;
 }
 
-/* Nav stiilid */
 nav {
-    position: absolute; /* Asetab nav pildi peale */
+    position: absolute; 
     top: 0;
-    width: 100%; /* Täidab kogu laiuse */
+    width: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Läbipaistev must taust */
+    background-color: rgba(0, 0, 0, 0.3); 
     padding: 20px 40px;
-    z-index: 10; /* Toob nav-i esiplaanile */
+    z-index: 10; 
     box-sizing: border-box;
 }
 
 nav h1 {
-    font-family: monospace;
     color: #e3e3e3;
     font-size: 24px;
     margin: 5px;
@@ -46,14 +43,12 @@ nav ul {
     font-weight: normal;
 }
 
-
-
 nav ul li a{
     color: #e3e3e3;
     cursor: pointer;
     padding: 15px 0;
     font-size: 18px;
-    font-family: monospace;
+    text-decoration: none;
 
 
 }
@@ -64,102 +59,12 @@ nav ul li a:hover {
 }
 
 .menu-icon {
-    display: none; /* Vaikimisi peidetud */
+    display: none; 
     font-size: 24px;
     color: #e3e3e3;
     cursor: pointer;
-    z-index: 15; /* Tõstke esile nav-i kohal */
+    z-index: 15; 
 }
-
-/* Meediapäring väiksematele ekraanidele */
-@media (max-width: 1070px) {
-    nav ul {
-        display: none; /* Algseis väike ekraan */
-        flex-direction: column; /* Vertikaalne paigutus */
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.3); /* Tume taust */
-        position: fixed;
-        top: 100%; /* Paigutage nav-i alla */
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        z-index: 10; /* Esiplaanile */
-    }
-
-    nav ul.active {
-        display: flex; /* Kuvatakse aktiivsena */
-    }
-
-    nav ul li {
-        text-align: center; /* Joondage keskele */
-        padding: 42.5px 0;
-    }
-    nav ul li:hover {
-        color: #fff;
-        text-shadow: 0 0 10px #fff; /* Esiletõstetud efekt */
-    }
-
-    .menu-icon {
-        display: block; /* Kuvatakse väiksematel ekraanidel */
-    }
-}
-/* Meediapäring väiksematele ekraanidele */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Algseis */
-        flex-direction: column; /* Vertikaalne paigutus */
-        justify-content: center; /* Joondab elemendid alguses */
-        align-items: center; /* Joondab elemendid paremale */
-        background-color: rgba(0, 0, 0, 0.8); /* Tume taust */
-        position: fixed; /* Kindel paigutus ekraanil */
-        top: 60px; /* Päisest allpool */
-        right: 0; /* Joondab menüü paremale */
-        transform: translateX(0); /* Pole vaja keskele viimist */
-        width: 70%; /* Menüü laius (kohanda vajadusel) */
-        padding: 20px;
-        border-radius: 8px 0 0 8px; /* Ümarad nurgad vasakule */
-        z-index: 10;
-        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3); /* Esteetiline vari */
-    }
-
-    nav ul.active {
-        display: flex; /* Kuvatakse aktiivsena */
-    }
-
-    nav ul li {
-        text-align: center; /* Tekst joondatakse paremale */
-        width: 100%; /* Laiendab menüüpunkte */
-        padding: 19.5px 0;
-    }
-
-    nav ul li a {
-        display: inline; /* Muudab lingid inline-elementideks */
-        text-align: center; /* Tekst joondub keskele */
-        color: #e3e3e3;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 0; /* Eemaldab paddingu, mis laiendas linki */
-        border-radius: 0; /* Eemaldab lisapiirjooned */
-    }
-
-    nav ul li a:hover {
-        background-color: transparent; /* Eemaldab hover-tausta */
-        color: #fff; /* Muudab ainult teksti värvi */
-    }
-
-    .menu-icon {
-        display: block; /* Menüükiko kuvamine väiksematel ekraanidel */
-        font-size: 28px;
-        color: #fff;
-    }
-}
-
-
-
-
-
-/* Taustapilt */
 .taustapilt {
     height: 60vh; /* Täidab 60% akna kõrgusest */
     width: 100%; /* Täidab kogu laiuse */
@@ -172,310 +77,35 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-
-/* Meediapäring väiksematele ekraanidele */
 @media (max-width: 1070px) {
     nav ul {
-        display: none; /* Peidetud algselt */
-        flex-direction: column; /* Vertikaalne paigutus */
-        background-color: rgba(0, 0, 0, 0.3); /* Tume taust menüü avamisel */
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%; /* Täidab kogu laiuse */
+        width: 100%;
         padding: 20px 0;
+        z-index: 10;
     }
 
     nav ul.active {
-        display: flex; /* Muudab nähtavaks, kui klass 'active' on lisatud */
+        display: flex;
     }
 
-    .menu-icon {
-        display: block; /* Kuvatakse väiksematel ekraanidel */
+    nav ul li {
+        text-align: center;
+        padding: 24px 0;
+        text-decoration: none;
     }
-}
-
-
-/* Valge taust */
-.valge-taust {
-    background-color: white;
-    color: #455d7a;
-    padding: 20px;
-    text-align: center;
-    font-family: monospace;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 50px auto;
-    box-sizing: border-box;
-    max-width: 1070px;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Main elemendid */
-main {
-    font-size: larger;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    margin-left: 20px;
-}
-
-main h2 {
-    color: #233142;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin: 50px 0;
-}
-
-/* Üldised p stiilid */
-/* Põhistiilid */
-main p {
-    text-align: justify; /* Joonda tekst õigesti */
-    font-size: 20px; /* Mugav teksti suurus */
-    line-height: 1.6; /* Mugav reavahe */
-    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
-    font-family: monospace;
-    margin: 0 30px;
-    word-wrap: break-word; /* Väldib teksti väljajooksmist */
-    overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
-}
-section {
-    display: block; /* Võimaldab loomuliku teksti voolu */
-    max-width: 100%; /* Väldi kitsendusi */
-}
-
-@media (max-width: 768px) {
-    main p {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
+    nav ul li:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+        text-decoration: none;
     }
-}
-
-a {
-    color: #233142;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #233142;
-    text-decoration: underline;
-}
-
-/* Loendid */
-ul {
-    margin: 0 30px;
-    text-align: left;
-    padding: 10px;
-    line-height: 30px;
-    font-size: 20px;
-}
-@media (max-width: 768px) {
-    ul {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
-    }
-}
-.highlight {
-    color: #f95959;
-    font-weight: bold;
-
-}
-
-/* Pildid */
-.pildid {
-    display: flex;
-    flex-wrap: nowrap; /* Pildid ei murdu uude ritta */
-    justify-content: space-between; /* Ühtlane vahe piltide vahel */
-    overflow-x: auto; /* Lisab horisontaalse kerimise, kui vajalik */
-}
-.pildid figure {
-    flex: 1 1 calc(33.33% - 15px); /* Iga kast võtab kolmandiku rea laiust */
-    max-width: calc(33.33% - 15px); /* Sama mis ülal */
-    box-sizing: border-box; /* Arvesta polsterdamist ja piiri */
-    background-color: #f9f9f9; /* Taustavärv */
-    text-align: center;
-    border-radius: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari */
-    overflow: hidden;
-    padding: 10px;
-}
-.pildid img {
-    width: 100%; /* Pilt täidab kogu kasti laiuse */
-    height: auto; /* Säilitab piltide proportsioonid */
-    border-radius: 5px; /* Ümarad nurgad */
-}
-.pildid figcaption h3{
-    font-size: 18px;
-    margin: 0 30px;
-    margin-bottom: 20px;
-}
-.pildid figcaption p {
-    font-size: 16px;
-    text-align: left;
-    white-space: normal; /* Laseb tekstil murduda */
-    hyphens: none; /* Väldib sõnade poolitamist */
-    word-break: break-word; /* Murrab sõnu ainult vajadusel */
-}
-
-.pildid figcaption {
-    margin-top: 10px;
-    text-align: left;
-    color: #455d7a;
-    max-width: 100%;
-}
-@media (max-width: 768px) {
-    .pildid figcaption p {
-        font-size: 12px;
-        text-align: left;
-        white-space: normal; /* Laseb tekstil murduda */
-        hyphens: none; /* Väldib sõnade poolitamist */
-        word-break: break-word; /* Murrab sõnu ainult vajadusel */
-    }
-    .pildid figcaption h3 {
-        font-size: 14px;
-    }
-}
-
-/* Meediapäring väiksemate ekraanide jaoks */
-@media (max-width: 480px) {
-    .pildid figcaption p {
-        font-size: 12px;
-        text-align: left;
-        white-space: normal; /* Laseb tekstil murduda */
-        hyphens: none; /* Väldib sõnade poolitamist */
-        word-break: break-word; /* Murrab sõnu ainult vajadusel */
-    }
-    .pildid figcaption h3{
-        font-size: 14px;
-    }
-}
-
-/* Kastid */
-.kastid {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: white;
-    padding: 10px;
-}
-
-.kast {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
-    box-sizing: border-box;
-    background-color: white;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari kastidele */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari kastidele */
-    border-radius: 5px;
-}
-
-.kast p {
-    font-size: 16px;
-    color: #455d7a;
-    font-weight: bold;
-    
-}
-@media (max-width: 768px) {
-    .kast p {
-        font-size: 12px; /* Väiksem font keskmistel ekraanidel */
-        line-height: 1.5; /* Sama ridade vahe */
-    }
-}
-
-/* Meediapäring väiksemate ekraanide jaoks */
-@media (max-width: 480px) {
-    .kast p {
-        font-size: 8px; /* Veel väiksem font väikestel ekraanidel */
-        line-height: 1.5; /* Sama ridade vahe */
-    }
-}
-
-/* Tekst pildi peal */
-.taust-pildiga {
-    position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
-    width: 100vw; /* Täidab kogu akna laiuse */
-    height: 30vh; /* Võid kohandada vastavalt vajadusele */
-    background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
-    background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
-    background-position: center; /* Keskenda pilt */
-    background-repeat: no-repeat; /* Väldi pildi kordumist */
-    z-index: 1; /* Kui vaja kihte hallata */
-}
-
-
-.tekst-pildi-peal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #fff;
-    padding: 15px 25px;
-    text-align: center;
-    width: auto;
-    max-width: 90%; /* Piirab kastide laiuse */
-}
-.taust-pildiga, main {
-    width: 100%; /* Eemalda laiuse piirang */
-    max-width: none; /* Tühista võimalik maksimaalne laius */
-    margin: 0; /* Eemalda tühikud */
-    padding: 0;
-}
-
-/* KONTAKT pealkirja eraldi positsioneerimine */
-.tekst-pildi-peal:first-of-type {
-    top: 10%;
-    z-index: 2; /* Tagab, et see on nähtav teise kasti peal */
-}
-
-/* Aadressi positsioneerimine */
-.tekst-pildi-peal:last-of-type {
-    top: 50%;
-    z-index: 1; /* Tagab, et see jääb esimese kasti alla */
-}
-.tekst-pildi-peal h2 {
-    margin: 5px 0;
-}
-
-
-.tekst-pildi-peal h2 a {
-    margin: 0;
-    font-size: 20px;
-    color: white;
-    font-weight: normal;
-}
-
-.tekst-pildi-peal h2 a:hover {
-    text-decoration: none;
-    text-shadow: 0 0 10px white;
-}
-
-.tekst-pildi-peal p {
-    margin: 5px 0;
-    font-size: 18px;
-    color: white;
-}
-
-/* Responsiivsus */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
     .taustapilt {
         height: 40vh;
     }
@@ -488,28 +118,269 @@ ul {
     .tekst-pildi-peal p {
         font-size: 12px;
     }
+
     .tekst-pildi-peal h2 a {
         font-size: 25px;
-        
+    }
+
+
+    .menu-icon {
+        display: block;
     }
 }
 
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 70%;
+        padding: 40px;
+        border-radius: 8px 0 0 8px;
+        z-index: 10;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+        padding: 25px 0;
+    }
+
+    nav ul li a {
+        display: inline;
+        text-align: center;
+        color: #e3e3e3;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 0;
+        border-radius: 0;
+    }
+    .taustapilt {
+        height: 40vh;
+    }
+
+    .tekst-pildi-peal {
+        width: 30%;
+        padding: 10px 15px;
+    }
+
+    .tekst-pildi-peal p {
+        font-size: 12px;
+    }
+
+    .tekst-pildi-peal h2 a {
+        font-size: 25px;
+    }
+
+    nav ul li a:hover {
+        background-color: transparent;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        color: #fff;
+    }
+}
+
+@media (max-width: 1070px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+
+
+
+.valge-taust {
+    flex: 3;
+    background: white;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row; /* Suurematel ekraanidel kõrvuti */
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.content-container.full-width {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Sektsioonid üksteise all */
+    gap: 20px; /* Sektsioonide vahe */
+    align-items: center; /* Keskendab sektsioonid horisontaalselt */
+}
+
+
+main p {
+    text-align: left; /* Joonda tekst õigesti */
+    color: #455d7a;
+    font-size: 20px; /* Mugav teksti suurus */
+    line-height: 1.8; /* Mugav reavahe */
+    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
+    font-family: monospace;
+    margin: 0 30px;
+    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
+    word-wrap: break-word; /* Väldib teksti väljajooksmist */
+    overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
+}
+a {
+    color: #233142;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #233142;
+    text-decoration: underline;
+}
+
+main h2 {
+    color: #233142;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.sidebar {
+    margin-left: 60px;
+    margin-top: 90px;
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin-bottom: 10px;
+        
+}
+
+.sidebar ul li a {
+    color:#455d7a;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+.sidebar ul li a:hover {
+    color: #233142;
+}
+.sidebar ul li a.highlight {
+    color: #233142;; 
+    font-weight: bold; 
+}
+.sidebar ul li a.highlight:hover {
+    color: #233142;; 
+    text-decoration: none;
+}
+
+.tekst-pildi-peal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    text-align: left;
+    max-width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+.taust-pildiga {
+    position: relative;
+    width: 100vw;
+    height: 30vh;
+    background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+.tekst-pildi-peal p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: white;
+}
+.tekst-pildi-peal:first-of-type {
+    top: 50%;
+    z-index: 2; 
+}
+.tekst-pildi-peal:hover {
+    background-color: white;
+    color: black;
+  }
+  .tekst-pildi-peal:hover p {
+    color: black; 
+  }
+
+
+
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .info-kast {
-    background-color: #f9f9f9; /* Hele taust */
-    border: 1px solid #ddd; /* Pehme ääris */
-    border-radius: 10px; /* Ümarad nurgad */
-    padding: 20px;
-    margin: 20px;
-    max-width: 800px; /* Maksimaalne laius */
-    margin: 20px auto; /* Keskendab kasti lehel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Pehme vari */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-kast h1 {
@@ -527,48 +398,58 @@ body {
 }
 
 .info-kast table {
-    width: 100%; /* Tabel täidab kogu kasti laiuse */
-    border-collapse: collapse; /* Ääriste ühendamine */
-    margin-top: 20px;
+    width: 100%;
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+    align-items: center;
 }
 
 .info-kast th,
 .info-kast td {
-    border: 1px solid #ddd; /* Tabeli lahtrite ääris */
-    padding: 10px; /* Polsterdamine */
-    text-align: center; /* Teksti joondamine keskele */
-    font-size: 16px;
-    color: #455d7a;;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #455d7a;
 }
 
 .info-kast th {
-    background-color: white; /* Tume taust päisele */
-    color: #455d7a;; /* Valge tekst päises */
+    background-color: white;
+    color: #455d7a;
     font-weight: bold;
 }
 
 .info-kast td {
-    background-color: #fff; /* Valge taust lahtritel */
+    background-color: #fff;
 }
 
 .info-kast tr:nth-child(even) td {
-    background-color: #f2f2f2; /* Helehall triip vahelduvatele ridadele */
+    background-color: #f2f2f2;
+}
+.info-kast,
+.valge-taust {
+    width: 100%; /* Kasti maksimaalne laius */
+    max-width: 800px; /* Maksimaalne laius suurematel ekraanidel */
+    text-align: center; /* Teksti keskjoonduseks */
+    margin: 0 auto; /* Kasti tsentreerimiseks */
+    padding: 20px;
+    background-color: #fff; /* Valge taust */
 }
 
 .maps-container {
-    margin-top: 20px; /* Vahe kaardi ja muu sisu vahel */
-    border: 1px solid #ddd; /* Kaardi ümber pehme ääris */
-    border-radius: 10px; /* Ümarad nurgad */
-    overflow: hidden; /* Väldi üleulatuvat sisu */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Pehme vari */
-    max-width: 100%; /* Kaart ei ületa ekraani laiust */
+    margin: 20px auto;
+    width: 100%; /* Kaardi maksimaalne laius */
+    max-width: 800px; /* Keskendatud ja piiratud suurusega */
+    text-align: center; /* Kaardi tsentreerimine */
 }
 
 iframe {
-    display: block; /* Eemaldab vaikimisi vahed */
-    width: 100%; /* Kohandub konteineri laiusega */
-    height: 450px; /* Kaardi kõrgus */
+    margin-top: 50px;
+    width: 100%; /* Kaardi laius kohandub konteinerile */
+    border: 0; /* Eemaldab iframe'i piiri */
 }
+
 .valge-taust p.center {
     text-align: center;
 }
