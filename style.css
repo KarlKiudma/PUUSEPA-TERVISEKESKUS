@@ -230,6 +230,7 @@ ul {
 
 /* Pildid */
 .pildid {
+    background-color: white;
     display: flex;
     flex-wrap: nowrap; /* Pildid ei murdu uude ritta */
     justify-content: space-between; /* Ühtlane vahe piltide vahel */
