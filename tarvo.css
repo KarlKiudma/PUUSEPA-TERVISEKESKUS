@@ -368,8 +368,6 @@ main h2 {
     background-color: #f4f4f4; /* Hele taust */
     padding: 20px;
     margin: 20px 0; /* Vahe kastide vahel */
-    border-radius: 8px; /* Ümarad nurgad */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Pehme vari */
 }
 
 .info-box h2 {
