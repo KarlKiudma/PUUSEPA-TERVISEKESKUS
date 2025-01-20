@@ -307,7 +307,6 @@ body {
 }
 
 .info-kast {
-    border-radius: 10px;
     padding: 10px;
     font-size: 14px;
     margin: 20px auto;
@@ -339,7 +338,6 @@ body {
 
 .info-kast th,
 .info-kast td {
-    border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     font-size: 18px;
@@ -352,13 +350,6 @@ body {
     font-weight: bold;
 }
 
-.info-kast td {
-    background-color: #fff;
-}
-
-.info-kast tr:nth-child(even) td {
-    background-color: #f2f2f2;
-}
 .info-kast,
 .valge-taust {
     width: 100%; /* Kasti maksimaalne laius */

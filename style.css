@@ -240,14 +240,12 @@ ul {
     max-width: calc(33.33% - 15px); /* Sama mis ülal */
     box-sizing: border-box; /* Arvesta polsterdamist ja piiri */
     text-align: center;
-    border-radius: 1px;
     overflow: hidden;
     padding: 10px;
 }
 .pildid img {
     width: 100%; /* Pilt täidab kogu kasti laiuse */
     height: auto; /* Säilitab piltide proportsioonid */
-    border-radius: 5px; /* Ümarad nurgad */
 }
 .pildid figcaption h3{
     font-size: 18px;
@@ -290,7 +288,6 @@ ul {
     text-align: center;
     padding: 10px;
     background-color: white;
-    border-radius: 5px;
 }
 
 
