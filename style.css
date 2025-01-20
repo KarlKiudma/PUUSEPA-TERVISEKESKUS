@@ -239,10 +239,8 @@ ul {
     flex: 1 1 calc(33.33% - 15px); /* Iga kast võtab kolmandiku rea laiust */
     max-width: calc(33.33% - 15px); /* Sama mis ülal */
     box-sizing: border-box; /* Arvesta polsterdamist ja piiri */
-    background-color: #f9f9f9; /* Taustavärv */
     text-align: center;
     border-radius: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pehme vari */
     overflow: hidden;
     padding: 10px;
 }
