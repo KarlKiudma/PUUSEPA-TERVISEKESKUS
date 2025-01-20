@@ -1,14 +1,13 @@
-/* Põhistiilid */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    box-sizing: border-box; /* Õige paddingu ja marginaali arvestus */
+    box-sizing: border-box; 
     font-family: monospace;
 }
 
-/* Header ja nav */
+
 header {
     position: relative;
     z-index: 10;
@@ -16,19 +15,21 @@ header {
 
 /* Nav stiilid */
 nav {
-    position: absolute; /* Asetab nav pildi peale */
+    position: absolute; 
     top: 0;
-    width: 100%; /* Täidab kogu laiuse */
+    left: 0;
+    width: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Läbipaistev must taust */
+    background-color: rgba(0, 0, 0, 0.3); 
     padding: 20px 40px;
-    z-index: 10; /* Toob nav-i esiplaanile */
+    z-index: 10; 
     box-sizing: border-box;
 }
 
 nav h1 {
+    font-family: monospace;
     color: #e3e3e3;
     font-size: 24px;
     margin: 5px;
@@ -53,6 +54,7 @@ nav ul li a{
     cursor: pointer;
     padding: 15px 0;
     font-size: 18px;
+    font-family: monospace;
     text-decoration: none;
 
 
@@ -64,12 +66,15 @@ nav ul li a:hover {
 }
 
 .menu-icon {
-    display: none; /* Vaikimisi peidetud */
+    display: none; 
     font-size: 24px;
     color: #e3e3e3;
     cursor: pointer;
-    z-index: 15; /* Tõstke esile nav-i kohal */
+    z-index: 15; 
 }
+
+
+
 .taustapilt {
     height: 60vh; /* Täidab 60% akna kõrgusest */
     width: 100%; /* Täidab kogu laiuse */
@@ -79,7 +84,6 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     position: relative; /* Tagab õige paigutuse */
     z-index: 1;
-    flex-wrap: wrap;
 }
 
 @media (max-width: 1070px) {
@@ -103,7 +107,7 @@ nav ul li a:hover {
 
     nav ul li {
         text-align: center;
-        padding: 24px 0;
+        padding: 20px 0;
         text-decoration: none;
     }
     nav ul li:hover {
@@ -135,6 +139,7 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    
     nav ul {
         display: none;
         flex-direction: column;
@@ -154,11 +159,15 @@ nav ul li a:hover {
     nav ul.active {
         display: flex;
     }
+    nav h1 {
+        font-size: 16px;
+    }
 
     nav ul li {
         text-align: center;
         width: 100%;
-        padding: 24px 0;
+        padding: 4px 0;
+        line-height: 1;
     }
 
     nav ul li a {
@@ -167,11 +176,11 @@ nav ul li a:hover {
         color: #e3e3e3;
         text-decoration: none;
         font-size: 18px;
+        padding: 0px 0;
         padding: 0;
-        border-radius: 0;
     }
     .taustapilt {
-        height: 40vh;
+        height: 50vh;
     }
 
     .tekst-pildi-peal {
@@ -221,20 +230,6 @@ nav ul li a:hover {
     }
 }
 
-
-
-
-
-.content-container {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .valge-taust {
     flex: 3;
     background: white;
@@ -263,9 +258,16 @@ main h2 {
     margin: 50px 0;
 }
 
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .sidebar {
-    margin-left: 100px;
-    margin-top: 100px;
     flex: 1;
     background-color: #f4f4f4;
     padding: 20px;
@@ -277,12 +279,11 @@ main h2 {
     margin-bottom: 10px;
     font-family: monospace;
     font-size: 20px;
-    
 }
+
 .sidebar h3 a {
     color: #233142;
     text-decoration: none;
-    
 }
 
 .sidebar ul {
@@ -303,24 +304,43 @@ main h2 {
 .sidebar ul li a:hover {
     color: #233142;
 }
+
 .sidebar ul li a.highlight {
-    color: #233142;; /* Muuda see soovitud värviks */
-    font-weight: bold; 
+    color: #233142;
+    font-weight: bold;
 }
+
 .sidebar ul li a.highlight:hover {
-    color: #233142;; 
+    color: #233142;
     text-decoration: none;
 }
 
+/* Lisa media query väiksemate ekraanide jaoks */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Muudab paigutuse vertikaalseks */
+    }
+
+    .sidebar {
+        margin-bottom: 20px; /* Lisan ruumi külgriba ja sisu vahele */
+    }
+}
+
+
 .taust-pildiga {
-    position: relative;
-    width: 100vw;
-    height: 30vh;
+    position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
+    width: 100vw; /* Täidab kogu akna laiuse */
+    height: 40vh; /* Võid kohandada vastavalt vajadusele */
     background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
+    background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
+    background-position: center; /* Keskenda pilt */
+    background-repeat: no-repeat; /* Väldi pildi kordumist */
+    z-index: 1; /* Kui vaja kihte hallata */
+}
+@media (max-width: 768px) {
+    .taust-pildiga {
+        height: 60vh;
+    }
 }
 
 .tekst-pildi-peal {
@@ -397,8 +417,6 @@ main h2 {
 .profile-image {
     flex: 1 1 auto; /* Kohandab pildi suurust */
     max-width: 300px; /* Maksimaalne pildi laius */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover; /* Tagab, et pilt täidab alati konteineri */
 }
 

@@ -7,14 +7,17 @@ body, html {
     font-family: monospace;
 }
 
+
 header {
     position: relative;
     z-index: 10;
 }
 
+/* Nav stiilid */
 nav {
     position: absolute; 
     top: 0;
+    left: 0;
     width: 100%; 
     display: flex;
     justify-content: space-between;
@@ -26,6 +29,7 @@ nav {
 }
 
 nav h1 {
+    font-family: monospace;
     color: #e3e3e3;
     font-size: 24px;
     margin: 5px;
@@ -43,11 +47,14 @@ nav ul {
     font-weight: normal;
 }
 
+
+
 nav ul li a{
     color: #e3e3e3;
     cursor: pointer;
     padding: 15px 0;
     font-size: 18px;
+    font-family: monospace;
     text-decoration: none;
 
 
@@ -65,6 +72,9 @@ nav ul li a:hover {
     cursor: pointer;
     z-index: 15; 
 }
+
+
+
 .taustapilt {
     height: 60vh; /* Täidab 60% akna kõrgusest */
     width: 100%; /* Täidab kogu laiuse */
@@ -74,7 +84,6 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     position: relative; /* Tagab õige paigutuse */
     z-index: 1;
-    flex-wrap: wrap;
 }
 
 @media (max-width: 1070px) {
@@ -98,7 +107,7 @@ nav ul li a:hover {
 
     nav ul li {
         text-align: center;
-        padding: 24px 0;
+        padding: 20px 0;
         text-decoration: none;
     }
     nav ul li:hover {
@@ -130,6 +139,7 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    
     nav ul {
         display: none;
         flex-direction: column;
@@ -149,11 +159,15 @@ nav ul li a:hover {
     nav ul.active {
         display: flex;
     }
+    nav h1 {
+        font-size: 16px;
+    }
 
     nav ul li {
         text-align: center;
         width: 100%;
-        padding: 25px 0;
+        padding: 4px 0;
+        line-height: 1;
     }
 
     nav ul li a {
@@ -162,11 +176,11 @@ nav ul li a:hover {
         color: #e3e3e3;
         text-decoration: none;
         font-size: 18px;
+        padding: 0px 0;
         padding: 0;
-        border-radius: 0;
     }
     .taustapilt {
-        height: 40vh;
+        height: 50vh;
     }
 
     .tekst-pildi-peal {
@@ -218,8 +232,6 @@ nav ul li a:hover {
 
 
 
-
-
 .valge-taust {
     flex: 3;
     background: white;
@@ -234,24 +246,6 @@ nav ul li a:hover {
     padding: 0;
 }
 
-.content-container {
-    display: flex;
-    flex-direction: row; /* Suurematel ekraanidel kõrvuti */
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.content-container.full-width {
-    max-width: 100%;
-    padding: 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; /* Sektsioonid üksteise all */
-    gap: 20px; /* Sektsioonide vahe */
-    align-items: center; /* Keskendab sektsioonid horisontaalselt */
-}
 
 
 main p {
@@ -283,10 +277,27 @@ main h2 {
     text-align: center;
     margin: 50px 0;
 }
+.content-container {
+    display: flex;
+    flex-direction: row; /* Suurematel ekraanidel kõrvuti */
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.content-container.full-width {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Sektsioonid üksteise all */
+    gap: 20px; /* Sektsioonide vahe */
+    align-items: center; /* Keskendab sektsioonid horisontaalselt */
+}
+
 
 .sidebar {
-    margin-left: 60px;
-    margin-top: 90px;
     flex: 1;
     background-color: #f4f4f4;
     padding: 20px;
@@ -320,6 +331,24 @@ main h2 {
     color: #233142;; 
     text-decoration: none;
 }
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Külgriba ja sisu vertikaalsesse paigutusse */
+        justify-content: flex-start;
+        align-items: stretch; /* Venitab sektsioonid ekraani laiuseks */
+        padding: 10px; /* Kitsendab paddingut väiksematel ekraanidel */
+        gap: 20px; /* Lisa ruum sektsioonide vahele */
+    }
+
+    .sidebar {
+        margin-bottom: 20px; /* Lisan ruumi külgriba ja sisu vahele */
+        flex: none; /* Keelab venimise väiksematel ekraanidel */
+    }
+
+    .sidebar ul li a {
+        font-size: 18px; /* Kohanda linkide suurust väiksematele ekraanidele */
+    }
+}
 
 .tekst-pildi-peal {
     position: absolute;
@@ -329,20 +358,26 @@ main h2 {
     border: 2px solid #fff;
     padding: 15px 25px;
     text-align: left;
+    width: auto;
     max-width: 100%;
     transition: all 0.3s ease;
 }
 
 
 .taust-pildiga {
-    position: relative;
-    width: 100vw;
-    height: 30vh;
+    position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
+    width: 100vw; /* Täidab kogu akna laiuse */
+    height: 40vh; /* Võid kohandada vastavalt vajadusele */
     background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
+    background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
+    background-position: center; /* Keskenda pilt */
+    background-repeat: no-repeat; /* Väldi pildi kordumist */
+    z-index: 1; /* Kui vaja kihte hallata */
+}
+@media (max-width: 768px) {
+    .taust-pildiga {
+        height: 60vh;
+    }
 }
 
 
@@ -380,7 +415,7 @@ body {
     font-size: 14px;
     margin: 20px auto;
     max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 20px);
 }
 
 .info-kast h1 {
@@ -452,4 +487,27 @@ iframe {
 
 .valge-taust p.center {
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .info-kast h1 {
+        font-size: 20px;
+    }
+
+    .info-kast p {
+        font-size: 14px;
+    }
+
+    .info-kast th, .info-kast td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    iframe {
+        height: 200px; /* Väiksem iframe kõrgus */
+    }
+
+    .info-kast {
+        padding: 10px;
+    }
 }
