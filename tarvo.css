@@ -365,7 +365,7 @@ main h2 {
 }
 
 .info-box {
-    background-color: #f4f4f4; /* Hele taust */
+    background-color:white;
     padding: 20px;
     margin: 20px 0; /* Vahe kastide vahel */
 }
