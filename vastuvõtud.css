@@ -4,7 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden; /* Väldib horisontaalset kerimist */
 }
 
@@ -23,7 +23,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6); /* Läbipaistvus paremaks kontrastiks */
-    padding: 14px 20px;
+    margin: 0 auto;
+    padding: 25px 20px;
     z-index: 100;
     box-sizing: border-box;
 }
@@ -71,18 +72,17 @@ nav ul li a:hover {
 
 /* Taustapilt */
 .taustapilt {
-    height: 60vh; /* Täidab 60% akna kõrgusest */
+    height: 40vh; /* Täidab 60% akna kõrgusest */
     width: 100%;
-    background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
+    background-image: url("http://media.voog.com/0000/0039/0731/photos/vastuvot_large.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
 }
-
 /* Mobiilisõbralik menüü */
-@media (max-width: 1070px) {
+@media (max-width: 1000px) {
     nav ul {
         display: none;
         flex-direction: column;
@@ -93,12 +93,9 @@ nav ul li a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%; /* Katab kogu ekraani kõrguse */
+        height: 100%; 
         z-index: 100;
         gap: 10px;
-    }
-    nav {
-        padding: 10px 20px;
     }
 
     nav ul.active {
@@ -111,7 +108,7 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 18px;
-        padding: 10px 20px;
+        padding: 0 auto;
     }
 }
 
@@ -123,14 +120,13 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 16px;
-        padding: 8px 15px;
+        padding: 10px auto;
     }
 
     .taustapilt {
         height: 50vh; /* Kohanda kõrgust väiksematel ekraanidel */
     }
 }
-
 
 
 
@@ -148,7 +144,6 @@ main p {
     font-size: 20px; /* Mugav teksti suurus */
     line-height: 1.8; /* Mugav reavahe */
     margin-bottom: 20px; /* Lisaruumi lõikude vahel */
-    font-family: monospace;
     margin: 0 30px;
     margin-bottom: 20px; /* Lisaruumi lõikude vahel */
     word-wrap: break-word; /* Väldib teksti väljajooksmist */
@@ -169,258 +164,26 @@ main h2 {
     font-weight: bold;
     text-align: center;
     margin: 50px 0;
-    font-family: monospace;
 }
 
 .content-container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .sidebar {
     flex: 1;
-    padding: 20px;body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box; 
-        font-family: monospace;
-    }
-    
-    
-    header {
-        position: relative;
-        z-index: 10;
-    }
-    
-    /* Nav stiilid */
-    nav {
-        position: absolute; 
-        top: 0;
-        left: 0;
-        width: 100%; 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.3); 
-        padding: 20px 40px;
-        z-index: 10; 
-        box-sizing: border-box;
-    }
-    
-    nav h1 {
-        font-family: monospace;
-        color: #e3e3e3;
-        font-size: 24px;
-        margin: 5px;
-        font-weight: normal;
-    }
-    
-    nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-        padding: 0;
-        gap: 20px;
-        transition: all 0.3s ease-in-out;
-        font-weight: normal;
-    }
-    
-    
-    
-    nav ul li a{
-        color: #e3e3e3;
-        cursor: pointer;
-        padding: 15px 0;
-        font-size: 18px;
-        font-family: monospace;
-        text-decoration: none;
-    
-    
-    }
-    nav ul li a:hover {
-        color: #e3e3e3;
-        text-shadow: 0 0 10px #e3e3e3;
-        text-decoration: none;
-    }
-    
-    .menu-icon {
-        display: none; 
-        font-size: 24px;
-        color: #e3e3e3;
-        cursor: pointer;
-        z-index: 15; 
-    }
-    
-    
-    
-    .taustapilt {
-        height: 60vh; /* Täidab 60% akna kõrgusest */
-        width: 100%; /* Täidab kogu laiuse */
-        background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative; /* Tagab õige paigutuse */
-        z-index: 1;
-    }
-    
-    @media (max-width: 1070px) {
-        nav ul {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-            z-index: 10;
-        }
-    
-        nav ul.active {
-            display: flex;
-        }
-    
-        nav ul li {
-            text-align: center;
-            padding: 20px 0;
-            text-decoration: none;
-        }
-        nav ul li:hover {
-            color: #fff;
-            text-shadow: 0 0 10px #fff;
-            text-decoration: none;
-        }
-        .taustapilt {
-            height: 40vh;
-        }
-    
-        .tekst-pildi-peal {
-            width: 30%;
-            padding: 10px 15px;
-        }
-    
-        .tekst-pildi-peal p {
-            font-size: 12px;
-        }
-    
-        .tekst-pildi-peal h2 a {
-            font-size: 25px;
-        }
-    
-    
-        .menu-icon {
-            display: block;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        
-        nav ul {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 70%;
-            padding: 40px;
-            border-radius: 8px 0 0 8px;
-            z-index: 10;
-            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.3);
-        }
-    
-        nav ul.active {
-            display: flex;
-        }
-        nav h1 {
-            font-size: 16px;
-        }
-    
-        nav ul li {
-            text-align: center;
-            width: 100%;
-            padding: 4px 0;
-            line-height: 1;
-        }
-    
-        nav ul li a {
-            display: inline;
-            text-align: center;
-            color: #e3e3e3;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 0px 0;
-            padding: 0;
-        }
-        .taustapilt {
-            height: 50vh;
-        }
-    
-        .tekst-pildi-peal {
-            width: 30%;
-            padding: 10px 15px;
-        }
-    
-        .tekst-pildi-peal p {
-            font-size: 12px;
-        }
-    
-        .tekst-pildi-peal h2 a {
-            font-size: 25px;
-        }
-    
-        nav ul li a:hover {
-            background-color: transparent;
-            color: #fff;
-            text-decoration: none;
-        }
-    
-        .menu-icon {
-            display: block;
-            font-size: 28px;
-            color: #fff;
-        }
-    }
-    
-    @media (max-width: 1070px) {
-        nav ul {
-            display: none;
-            flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.3);
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-        }
-    
-        nav ul.active {
-            display: flex;
-        }
-    
-        .menu-icon {
-            display: block;
-        }
-    }
+    padding: 20px;
     height: fit-content;
+    font-size: 20px;
 }
 
 .sidebar h3 {
     margin-bottom: 10px;
-    font-family: monospace;
-    font-size: 20px;
 }
 
 .sidebar h3 a {
@@ -435,7 +198,7 @@ main h2 {
 
 .sidebar ul li {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .sidebar ul li a {
@@ -445,6 +208,7 @@ main h2 {
 
 .sidebar ul li a:hover {
     color: #233142;
+    font-weight: bold;
 }
 
 .sidebar ul li a.highlight {
@@ -460,7 +224,7 @@ main h2 {
 /* Lisa media query väiksemate ekraanide jaoks */
 @media (max-width: 768px) {
     .content-container {
-        flex-direction: column; /* Muudab paigutuse vertikaalseks */
+        flex-direction: column;
     }
 
     .sidebar {
@@ -472,17 +236,12 @@ main h2 {
 .taust-pildiga {
     position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
     width: 100vw; /* Täidab kogu akna laiuse */
-    height: 40vh; /* Võid kohandada vastavalt vajadusele */
+    height: 50vh; /* Võid kohandada vastavalt vajadusele */
     background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
     background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
     background-position: center; /* Keskenda pilt */
     background-repeat: no-repeat; /* Väldi pildi kordumist */
     z-index: 1; /* Kui vaja kihte hallata */
-}
-@media (max-width: 768px) {
-    .taust-pildiga {
-        height: 60vh;
-    }
 }
 
 .tekst-pildi-peal {
@@ -512,7 +271,7 @@ main h2 {
 
 /* Aadressi positsioneerimine */
 .tekst-pildi-peal:last-of-type {
-    top: 50%;
+    top: 55%;
     z-index: 1; /* Tagab, et see jääb esimese kasti alla */
 }
 .tekst-pildi-peal h2 {

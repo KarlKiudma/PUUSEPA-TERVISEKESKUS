@@ -24,7 +24,7 @@ nav {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6); /* Läbipaistvus paremaks kontrastiks */
     margin: 0 auto;
-    padding: 20px 20px;
+    padding: 25px 20px;
     z-index: 100;
     box-sizing: border-box;
 }
@@ -74,7 +74,7 @@ nav ul li a:hover {
 .taustapilt {
     height: 40vh; /* Täidab 60% akna kõrgusest */
     width: 100%;
-    background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
+    background-image: url("http://media.voog.com/0000/0039/0731/photos/kabinet6%402x.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,6 @@ nav ul li a:hover {
         width: 100%;
         height: 100%; 
         z-index: 100;
-        padding: 20px;
         gap: 10px;
     }
 
@@ -109,7 +108,7 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 18px;
-        padding: 10px 20px;
+        padding: 0 auto;
     }
 }
 
@@ -121,7 +120,7 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 16px;
-        padding: 8px 15px;
+        padding: 10px auto;
     }
 
     .taustapilt {
@@ -130,37 +129,28 @@ nav ul li a:hover {
 }
 
 
-
-/* Valge taust */
 .valge-taust {
-    background-color: white;
-    color: #455d7a;
+    flex: 3;
+    background: white;
     padding: 20px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 50px auto;
-    box-sizing: border-box;
-    max-width: 1070px;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Main elemendid */
-main {
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
     margin-left: 20px;
+    max-width: 90%;
+}
+@media (max-width: 768px) {
+    .valge-taust {
+        max-width: 100%;
+        margin-left: 0px;
+        padding: 0;
+    }
+}
+main p {
+    text-align: left;
+    color: #455d7a;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 30px 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 main h2 {
@@ -171,166 +161,77 @@ main h2 {
     margin: 50px 0;
 }
 
-/* Üldised p stiilid */
-/* Põhistiilid */
-main p {
-    text-align: left; /* Joonda tekst õigesti */
-    font-size: 20px; /* Mugav teksti suurus */
-    line-height: 1.6; /* Mugav reavahe */
-    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
-    margin: 0 30px;
-    word-wrap: break-word; /* Väldib teksti väljajooksmist */
-    overflow-wrap: break-word; /* Toetab tekstivoolu katkemist */
-}
-section {
-    display: block; /* Võimaldab loomuliku teksti voolu */
-    max-width: 100%; /* Väldi kitsendusi */
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-@media (max-width: 768px) {
-    main p {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
-    }
-    main ul li {
-        font-size: 16px; /* Väiksem teksti suurus */
-        line-height: 1.4; /* Kitsam reavahe */
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    height: fit-content;
+}
 
-    }
+.sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
 }
-.highlight {
-    color: #f95959;
-}
-p a {
+
+.sidebar h3 a {
     color: #233142;
     text-decoration: none;
 }
 
-p a:hover {
-    color: #233142;
-    text-decoration: underline;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
-ul li a{
-    color:#233142;
+.sidebar ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.sidebar ul li a {
     text-decoration: none;
-}
-ul li a:hover{
-    color:#233142;
-    text-decoration: underline;
-}
-
-/* Loendid */
-ul {
-    margin: 0 30px;
-    text-align: left;
-    padding: 10px;
-    line-height: 30px;
-    font-size: 20px;
-}
-
-
-/* Pildid */
-.pildid {
-    background-color: white;
-    display: flex;
-    flex-wrap: nowrap; /* Pildid ei murdu uude ritta */
-    justify-content: space-between; /* Ühtlane vahe piltide vahel */
-    overflow-x: auto; /* Lisab horisontaalse kerimise, kui vajalik */
-}
-.pildid figure {
-    flex: 1 1 calc(33.33% - 15px); /* Iga kast võtab kolmandiku rea laiust */
-    max-width: calc(33.33% - 15px); /* Sama mis ülal */
-    box-sizing: border-box; /* Arvesta polsterdamist ja piiri */
-    text-align: center;
-    overflow: hidden;
-    padding: 10px;
-}
-.pildid img {
-    width: 100%; /* Pilt täidab kogu kasti laiuse */
-    height: auto; /* Säilitab piltide proportsioonid */
-}
-.pildid figcaption h3{
-    font-size: 20px;
-    margin: 0 10px;
-    margin-bottom: 20px;
-}
-.pildid figcaption p {
-    font-size: 20px;
-    text-align: left;
-    white-space: normal; /* Laseb tekstil murduda */
-    hyphens: none; /* Väldib sõnade poolitamist */
-    word-break: break-word; /* Murrab sõnu ainult vajadusel */
-    line-height: 2;
-    margin: 10px 10px;
-}
-
-.pildid figcaption {
-    margin-top: 10px;
-    text-align: left;
     color: #455d7a;
-    max-width: 100%;
 }
 
-
-
-
-/* Kastid */
-.kastid {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: white;
-}
-
-.kast {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
-    box-sizing: border-box;
-    text-align: left;
-    background-color: white;
-}
-
-
-.kast p {
-    font-size: 18px;
-    color: #455d7a;
+.sidebar ul li a:hover {
+    color: #233142;
     font-weight: bold;
     
+
 }
-.kast p a{
-    font-size: 18px;
+
+.sidebar ul li a.highlight {
+    color: #233142;
+    font-weight: bold;
 }
-@media (max-width: 500px) {
-    .pildid {
-        flex-direction: column; /* Pildid üksteise all */
-        align-items: center;
+
+.sidebar ul li a.highlight:hover {
+    color: #233142;
+    text-decoration: none;
+}
+
+/* Lisa media query väiksemate ekraanide jaoks */
+@media (max-width: 768px) {
+    .content-container {
+        margin: 0 0;
+        flex-direction: column;
+        width: fit-content;
     }
 
-    .pildid figure {
-        flex: 1 1 100%; /* Täislaius väikestel ekraanidel */
-        max-width: 100%;
-    }
-
-    .kastid {
-        flex-direction: column; /* Kastid üksteise all */
-        align-items: center;
-    }
-
-    .kast {
-        flex: 1 1 100%; /* Täislaius väikestel ekraanidel */
-        max-width: 100%;
-    }
-
-    .pildid img {
-        width: 100%; /* Pildid täidavad kogu laiuse */
-        height: auto;
+    .sidebar {
+        margin-bottom: 20px; /* Lisan ruumi külgriba ja sisu vahele */
     }
 }
 
 
-/* Tekst pildi peal */
 .taust-pildiga {
     position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
     width: 100vw; /* Täidab kogu akna laiuse */
@@ -341,7 +242,6 @@ ul {
     background-repeat: no-repeat; /* Väldi pildi kordumist */
     z-index: 1; /* Kui vaja kihte hallata */
 }
-
 
 .tekst-pildi-peal {
     position: absolute;
@@ -378,7 +278,6 @@ ul {
 }
 
 
-
 .tekst-pildi-peal h2 a {
     color: white;
     font-family: var(--button-font-style);
@@ -400,36 +299,93 @@ ul {
     margin: 5px 0;
     font-size: 18px;
     color: white;
-    line-height: 1;
 }
 .tekst-pildi-peal:hover p {
     color: black; 
   }
 
-
-h3 {
-    color:#455d7a;
-    text-align: left;
-    padding: 8px 15px;
-    justify-content: center;
-    font-size: 20p;
-    margin-left: 20px;
-    line-height: 1.2; /* Mugav reavahe */
-    margin-bottom: 20px; /* Lisaruumi lõikude vahel */
-    margin: 0 30px;
-    word-wrap: break-word; /* Väldib teksti väljajooksmist */
-    overflow-wrap: break-word;
+.profile {
+    display: flex;
+    flex-direction: row; /* Hoidke elemendid kõrvuti */
+    flex-wrap: nowrap; /* Väldib elementide murdumist uude ritta */
+    align-items: flex-start; /* Joondab elemendid ülemise serva järgi */
+    gap: 20px; /* Vahe pildi ja teksti vahel */
+    margin-top: 20px;
 }
 
-h3 a {
-    color:#233142;
-    cursor: pointer;
+.profile-image {
+    flex: 1 1 auto; /* Kohandab pildi suurust */
+    max-width: 300px; /* Maksimaalne pildi laius */
+    object-fit: cover; /* Tagab, et pilt täidab alati konteineri */
+}
+
+.profile-text {
+    flex: 2 1 auto; /* Kohandab tekstiosa suurust */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #455d7a;
+    text-align: justify;
+    max-width: 335px;
+}
+
+
+.profile-text h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #233142;
+}
+
+.profile-text p {
+    margin-bottom: 10px;
+}
+.profile-text p a {
     text-decoration: none;
-    border-radius: 5px;
+    color: #233142;
 
 }
-
-h3 a:hover {
-    color:#233142;
+.profile-text p a:hover{
     text-decoration: underline;
+}
+
+/* Responsiivsus väiksematele ekraanidele */
+@media (max-width: 1030px) {
+    .profile {
+        gap: 10px; /* Väiksem vahe pildi ja teksti vahel väiksematel ekraanidel */
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .profile-text {
+        font-size: 16px; /* Teksti suuruse kohandus väiksematele ekraanidele */
+    }
+}
+
+.info-box {
+    background-color:white;
+    padding: 20px;
+    margin: 20px 0; /* Vahe kastide vahel */
+}
+
+.info-box h2 {
+    color: #233142;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.info-box p {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #455d7a;
+    line-height: 1.6; /* Mugav reavahe */
+}
+
+.info-box p a {
+    text-decoration: none;
+    color: #233142;
+}
+
+.info-box p a:hover {
+    text-decoration: underline; /* Hover-efekt lingile */
 }

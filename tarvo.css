@@ -4,7 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden; /* Väldib horisontaalset kerimist */
 }
 
@@ -23,7 +23,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6); /* Läbipaistvus paremaks kontrastiks */
-    padding: 14px 20px;
+    margin: 0 auto;
+    padding: 25px 20px;
     z-index: 100;
     box-sizing: border-box;
 }
@@ -71,18 +72,17 @@ nav ul li a:hover {
 
 /* Taustapilt */
 .taustapilt {
-    height: 60vh; /* Täidab 60% akna kõrgusest */
+    height: 40vh; /* Täidab 60% akna kõrgusest */
     width: 100%;
-    background-image: url("https://media.voog.com/0000/0039/0731/photos/Header_large.jpg");
+    background-image: url("http://media.voog.com/0000/0039/0731/photos/kabinet%402x.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
 }
-
 /* Mobiilisõbralik menüü */
-@media (max-width: 1070px) {
+@media (max-width: 1000px) {
     nav ul {
         display: none;
         flex-direction: column;
@@ -93,12 +93,9 @@ nav ul li a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%; /* Katab kogu ekraani kõrguse */
+        height: 100%; 
         z-index: 100;
         gap: 10px;
-    }
-    nav {
-        padding: 10px 20px;
     }
 
     nav ul.active {
@@ -111,7 +108,7 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 18px;
-        padding: 10px 20px;
+        padding: 0 auto;
     }
 }
 
@@ -123,16 +120,13 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 16px;
-        padding: 8px 15px;
+        padding: 10px auto;
     }
 
     .taustapilt {
         height: 50vh; /* Kohanda kõrgust väiksematel ekraanidel */
     }
 }
-
-
-
 
 
 .valge-taust {
@@ -142,7 +136,13 @@ nav ul li a:hover {
     margin-left: 20px;
     max-width: 90%;
 }
-
+@media (max-width: 768px) {
+    .valge-taust {
+        max-width: 100%;
+        margin-left: 0px;
+        padding: 0;
+    }
+}
 main p {
     text-align: left;
     color: #455d7a;
@@ -165,7 +165,7 @@ main h2 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -178,7 +178,6 @@ main h2 {
 
 .sidebar h3 {
     margin-bottom: 10px;
-    font-family: monospace;
     font-size: 20px;
 }
 
@@ -194,7 +193,7 @@ main h2 {
 
 .sidebar ul li {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .sidebar ul li a {
@@ -204,6 +203,9 @@ main h2 {
 
 .sidebar ul li a:hover {
     color: #233142;
+    font-weight: bold;
+    
+
 }
 
 .sidebar ul li a.highlight {
@@ -219,7 +221,9 @@ main h2 {
 /* Lisa media query väiksemate ekraanide jaoks */
 @media (max-width: 768px) {
     .content-container {
-        flex-direction: column; /* Muudab paigutuse vertikaalseks */
+        margin: 0 0;
+        flex-direction: column;
+        width: fit-content;
     }
 
     .sidebar {
@@ -231,17 +235,12 @@ main h2 {
 .taust-pildiga {
     position: relative; /* Või 'absolute', kui soovid fikseeritud paigutust */
     width: 100vw; /* Täidab kogu akna laiuse */
-    height: 40vh; /* Võid kohandada vastavalt vajadusele */
+    height: 50vh; /* Võid kohandada vastavalt vajadusele */
     background-image: url('https://www.ehitustrust.ee/storage/2022/10/Ehitustrust_Puusepa-3_Tervisekeskus_13072015_Uku-Peterson_59.jpg');
     background-size: cover; /* Pilt katab täielikult ala, säilitades proportsioonid */
     background-position: center; /* Keskenda pilt */
     background-repeat: no-repeat; /* Väldi pildi kordumist */
     z-index: 1; /* Kui vaja kihte hallata */
-}
-@media (max-width: 768px) {
-    .taust-pildiga {
-        height: 60vh;
-    }
 }
 
 .tekst-pildi-peal {
@@ -271,7 +270,7 @@ main h2 {
 
 /* Aadressi positsioneerimine */
 .tekst-pildi-peal:last-of-type {
-    top: 50%;
+    top: 55%;
     z-index: 1; /* Tagab, et see jääb esimese kasti alla */
 }
 .tekst-pildi-peal h2 {
@@ -312,7 +311,6 @@ main h2 {
     align-items: flex-start; /* Joondab elemendid ülemise serva järgi */
     gap: 20px; /* Vahe pildi ja teksti vahel */
     margin-top: 20px;
-    overflow: auto; /* Lisab kerimisvõimaluse, kui ruumi ei piisa */
 }
 
 .profile-image {
@@ -327,6 +325,7 @@ main h2 {
     line-height: 1.6;
     color: #455d7a;
     text-align: justify;
+    max-width: 335px;
 }
 
 
@@ -353,6 +352,7 @@ main h2 {
     .profile {
         gap: 10px; /* Väiksem vahe pildi ja teksti vahel väiksematel ekraanidel */
         flex-wrap: wrap;
+        justify-content: center;
 
     }
 
@@ -376,7 +376,7 @@ main h2 {
 
 .info-box p {
     margin: 5px 0;
-    font-size: 16px;
+    font-size: 20px;
     color: #455d7a;
     line-height: 1.6; /* Mugav reavahe */
 }
